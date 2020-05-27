@@ -1,0 +1,102 @@
+<!Doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Travel App</title>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="head-tag">
+            <h1>Plan Travel App</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container-fluid pad-zero">
+      <section class="background-container">
+        <div class="caption">
+          <div class="container search-container">
+            <div class="row input-fields">
+              <div class="col-12">
+                <h2>Plan your trip</h2>
+              </div>
+            </div>
+            <div class="row input-fields">
+              <div class="label col-md-12 mt">
+                <label>City</label>
+                <input type="text" class="form-input" id="city" placeholder="City" aria-label="City">
+              </div>
+              <div class="start-date col-sm-6 col-md-12 mt">
+                <label>Start-Date</label>
+                <input type="date" class="form-input" id="date_start" aria-label="Date">
+              </div>
+              <div class="end-date col-sm-6 col-md-12 mt">
+                <label>End-Date</label>
+                <input type="date" class="form-input" id="date_end" aria-label="Date">
+              </div>
+              <div class="col-md-12">
+                <button class="btn btn-secondary search-btn" type="button" id="button_search">Search</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="tripModal" style="background-color: rgba(0, 0, 0, 0.5);" tabindex="-1" role="dialog"
+          aria-labelledby="tripModalTitle" aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 class="modal-title trip_title" id="tripModalTitle"></h2>
+                <button class="trip_cancel close" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="container-fluid">
+                  <div class="media row">
+                    <div class="media-body col-12 col-lg-12">
+                      <h3>Details of the planned trip</h3>
+                      <h4>Travelling to: <span class="media_heading"></span></h4>
+                      <h5>Departure: <span class="media_heading"></span></h5>
+                      <h5>Return: <span class="media_heading"></span></h5>
+                      <h5>Duration: <span class="media_heading"></span></h5>
+                      <span class="trip_countdown"></span>
+                      <span class="trip_weather"></span>
+                    </div>
+                    <div class="col-12 col-lg-12">
+                      <img src="" class="images" alt="location-image">
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <!-- <button type="button" class="btn btn-primary trip_save">Save</button> -->
+                  <button type="button" class="btn btn-secondary trip_cancel">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <p>This app is build by Divyanshi Rastogi</p>
+    </footer>
+  </main>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js');
+      });
+    }
+
+  </script>
+</body>
+
+</html>
